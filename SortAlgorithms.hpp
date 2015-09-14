@@ -1,6 +1,7 @@
 #include <cstddef>
 #include <algorithm>
-
+#include <iostream>
+using namespace std;
 template<class T>
 void SelectionSort(T *pArray, const std::size_t n){ 
   for(std::size_t i=0; i<n; i++){
@@ -22,15 +23,16 @@ void InsertionSort(T* pArray, const std::size_t n){
   for(std::size_t i=1; i<n; i++){
     auto elementToSort = *(pArray+i);
     auto insertIndex = i;
-    for( std::size_t j=i-1; j>=0; j--){
-      if (*(pArray+j) < elementToSort){
-	insertIndex = j+1;
+    
+    for( std::size_t j=0; j <i ; j++){
+      if (*(pArray+j) > elementToSort){
+	insertIndex = j;
 	break;
       }
     }
     if(insertIndex != i){
-      for (std::size_t j=i-1; j>=insertIndex; j--){
-	*(pArray+j+1) = *(pArray+j);
+      for (std::size_t j=i; j>insertIndex; j--){
+	*(pArray+j) = *(pArray+j-1);
       }
       *(pArray+insertIndex) = elementToSort;
     }
