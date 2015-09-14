@@ -15,7 +15,12 @@
 
 using namespace std;
 
-
+enum ALGORITHM_TYPE{
+  SELECTION_SORT=1,
+  INSERTION_SORT,
+  MERGE_SORT,
+  QUICK_SORT
+};
 void loadTestCasesForSortAlgorithms(std::list<std::vector<int>>& lTestCases, const char* testCaseFile){
   string line;
   ifstream tcFileStream(testCaseFile);
@@ -36,10 +41,46 @@ void loadTestCasesForSortAlgorithms(std::list<std::vector<int>>& lTestCases, con
     tcFileStream.close();
   }
   else{
-    cout << "Unable to open file"; 
+    std::cout << "Unable to open file"; 
   }
 }
 
+void copyVectorToArray(const std::vector<int>& tmp, int* pArray){
+  std::vector<int>::const_iterator itv;
+  std::size_t cntr = 0;
+  for(itv = tmp.begin(); itv!=tmp.end(); ++itv){
+    *(pArray+cntr) = *itv;
+     cntr++;
+  }
+}
+void printArray(const int* pArray, const std::size_t n, const std::string textToPrint){
+  std::cout << "TestCase " <<  textToPrint << std::endl;
+  for(std::size_t i=0; i<n; i++){
+    std::cout << *(pArray+i) << ",";
+  }
+  std::cout << std::endl;
+
+}
+void sortNTime(int* pArray, const std::size_t n, const ALGORITHM_TYPE algorithmType){
+  std::chrono::time_point<std::chrono::system_clock> start, end;
+  start = std::chrono::system_clock::now();
+  switch(algorithmType){
+  case ALGORITHM_TYPE::SELECTION_SORT:
+    SelectionSort(pArray, n);
+    break;
+  case ALGORITHM_TYPE::INSERTION_SORT:
+    InsertionSort(pArray, n);
+    break;
+  default: 
+    break;
+  }
+  end = std::chrono::system_clock::now();
+
+  std::chrono::duration<double> elapsed_seconds = end-start;
+  std::time_t end_time = std::chrono::system_clock::to_time_t(end);
+  std::cout << "Elapsed Time: " << elapsed_seconds.count() << "s" << std::endl;
+
+}
 int main(int argc, char* argv[]){
   if (argc < 2) {
     cout << "Usage is -t <testCaseFile>\n";
@@ -47,45 +88,32 @@ int main(int argc, char* argv[]){
   }
   else{
     cout << argv[0] << "-" << argv[1] << "-" << argv[2] << endl;
-    if (strcmp(argv[1], "-t") == 0){
+    if (strcmp(argv[1], "-f") == 0){
         char* testCaseFile = argv[2];
+
+	// load test cases 
         std::list<std::vector<int>> lTestCases;
 	loadTestCasesForSortAlgorithms(lTestCases,testCaseFile);
 	
+	// load list of testcases and convert to vector
         std::list<std::vector<int>>::iterator it;
 	for(it=lTestCases.begin(); it != lTestCases.end(); ++it){
 	  std::vector<int>& tmp = *it;
-	  int* testCase = new int(tmp.size());
-	  std::vector<int>::iterator itv;
-	  std::size_t cntr = 0;
-	  for(itv = tmp.begin(); itv!=tmp.end(); ++itv){
-	    *(testCase+cntr) = *itv;
-	    cntr++;
-	  }
-	  cout << "TestCase Before Sorting.. " << endl;
-	  for(size_t i=0; i<tmp.size(); i++){
-	    cout << *(testCase+i) << ",";
-	  }
-	  cout << endl;
-
-	  std::chrono::time_point<std::chrono::system_clock> start, end;
-	  start = std::chrono::system_clock::now();
-
-	  SelectionSort(testCase, tmp.size());
-
-	  end = std::chrono::system_clock::now();
 	  
+	  size_t n = tmp.size();
 
-	  cout << "After sorting ... " << endl;
-	  for(size_t i=0; i<tmp.size(); i++){
-	    cout << *(testCase+i) << ",";
-	  }
-	  cout << endl;
+	  int* testCase = new int[n];
+	  copyVectorToArray(tmp, testCase);
 
-	  std::chrono::duration<double> elapsed_seconds = end-start;
-	  std::time_t end_time = std::chrono::system_clock::to_time_t(end);
-	  cout << "Elapsed Time: " << elapsed_seconds.count() << "s" << endl;
-	  cout << "-------------------------------------------------------" << endl;
+	 
+	  printArray(testCase, n, " before sorting");
+	  sortNTime(testCase, n, ALGORITHM_TYPE::INSERTION_SORT);
+	  printArray(testCase, n, " after sorting");
+	  
+	  std::cout << "-------------------------------------------------------" << std::endl;
+
+	  delete[] testCase;
+	  testCase = NULL;
 	}
     }
     else{
