@@ -14,8 +14,5 @@ void SelectionSort(T *pArray, const std::size_t n){
       }
     }
     std::swap(*(pArray+i), *(pArray+swapIndex));
-    /*auto tmp = *(pArray+swapIndex);
-    *(pArray+swapIndex) = *(pArray+i);
-    *(pArray+i) = tmp;*/
   }
 }
