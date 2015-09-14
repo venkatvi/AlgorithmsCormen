@@ -1,7 +1,6 @@
 #include <cstddef>
 #include <algorithm>
-#include <iostream>
-using namespace std;
+
 template<class T>
 void SelectionSort(T *pArray, const std::size_t n){ 
   for(std::size_t i=0; i<n; i++){
@@ -14,9 +13,9 @@ void SelectionSort(T *pArray, const std::size_t n){
 	swapIndex = j;
       }
     }
-    //    std::swap(*(pArray+i), *(pArray+swapIndex));
-    auto tmp = *(pArray+swapIndex);
+    std::swap(*(pArray+i), *(pArray+swapIndex));
+    /*auto tmp = *(pArray+swapIndex);
     *(pArray+swapIndex) = *(pArray+i);
-    *(pArray+i) = tmp;
+    *(pArray+i) = tmp;*/
   }
 }
