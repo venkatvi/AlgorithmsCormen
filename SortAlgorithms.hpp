@@ -1,6 +1,8 @@
 #include <cstddef>
 #include <algorithm>
+#include <utility>
 #include <iostream>
+#include <math.h>
 using namespace std;
 template<class T>
 void SelectionSort(T *pArray, const std::size_t n){ 
@@ -86,28 +88,30 @@ void MergeSort(T *pArray, const std::size_t low, const std::size_t high){
   Merge(pArray, low, low+mid, low+mid+1, high);
 }
 template<class T>
-void QuickSort(T* pArray, const std::size_t, lo, const std::size_t hi){
-  int pivot = rand() % *(hi-lo);
-  int i = lo, j = lo + pivot +1; 
-  while(i< lo+pivot && j < hi){
-    bool swapped = false;
-    if ((*(pArray+i) > pivot) && (*(pArray+j) <= pivot)) {
-      //swap elements
-      T temp = *(pArray+i);
-      *(pArray+i) = *(pArray+j);
-      *(pArray+j) = temp;
-      swapped = true;
+int QuickSortPartition(T* pArray, const std::size_t lo, const std::size_t hi){
+  auto i = lo-1;
+  for(auto j = lo; j <= hi -1; j++){
+    if (*(pArray + j) <= *(pArray + hi)){
+        i = i + 1;
+        swap(pArray[i], pArray[j]);
     }
-    if (!swapped){
-      if(*(pArray+i) > pivot){	j++;  }else{ i++;  }
-    }else{ i++;  j++; }
   }
-  QuickSort(pArray, lo, pivot-1);
-  QuickSort(pArray, pivot+1, hi);
+  swap(pArray[i+1], pArray[hi]);
+  return i + 1;
+} 
+template<class T>
+void QuickSort(T* pArray, const int lo, const int hi)
+{
+  if (hi <= lo) { return ;} 
+  auto pivotIndex = QuickSortPartition(pArray, lo, hi);
+  
+  QuickSort(pArray, lo, pivotIndex - 1);
+  QuickSort(pArray, pivotIndex + 1, hi);
 }
+/*
 template<class T>
 void RandomizedQuickSort(T* pArray, const std::size_t n){
 }
 template<class T>
 void HybridSort(T* pArray, const std::size_t n){
-}
+}*/

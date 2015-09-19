@@ -21,7 +21,8 @@ enum ALGORITHM_TYPE{
   MERGE_SORT,
   QUICK_SORT
 };
-void loadTestCasesForSortAlgorithms(std::list<std::vector<int>>& lTestCases, const char* testCaseFile){
+
+void loadTestCasesForSortAlgorithms(std::list<std::vector<int> >& lTestCases, const char* testCaseFile){
   string line;
   ifstream tcFileStream(testCaseFile);
   if(tcFileStream.is_open()){
@@ -65,14 +66,17 @@ void sortNTime(int* pArray, const std::size_t n, const ALGORITHM_TYPE algorithmT
   std::chrono::time_point<std::chrono::system_clock> start, end;
   start = std::chrono::system_clock::now();
   switch(algorithmType){
-  case ALGORITHM_TYPE::SELECTION_SORT:
+  case SELECTION_SORT:
     SelectionSort(pArray, n);
     break;
-  case ALGORITHM_TYPE::INSERTION_SORT:
+  case INSERTION_SORT:
     InsertionSort(pArray, n);
     break;
-  case ALGORITHM_TYPE::MERGE_SORT:
+  case MERGE_SORT:
     MergeSort(pArray, 0, n-1);
+    break;
+  case QUICK_SORT:
+    QuickSort(pArray, 0, n-1);
     break;
   default: 
     break;
@@ -95,11 +99,11 @@ int main(int argc, char* argv[]){
         char* testCaseFile = argv[2];
 
 	// load test cases 
-        std::list<std::vector<int>> lTestCases;
+        std::list<std::vector<int> > lTestCases;
 	loadTestCasesForSortAlgorithms(lTestCases,testCaseFile);
 	
 	// load list of testcases and convert to vector
-        std::list<std::vector<int>>::iterator it;
+        std::list<std::vector<int> >::iterator it;
 	for(it=lTestCases.begin(); it != lTestCases.end(); ++it){
 	  std::vector<int>& tmp = *it;
 	  
@@ -110,7 +114,7 @@ int main(int argc, char* argv[]){
 
 	 
 	  printArray(testCase, n, " before sorting");
-	  sortNTime(testCase, n, ALGORITHM_TYPE::MERGE_SORT);
+	  sortNTime(testCase, n, QUICK_SORT);
 	  printArray(testCase, n, " after sorting");
 	  
 	  std::cout << "-------------------------------------------------------" << std::endl;
