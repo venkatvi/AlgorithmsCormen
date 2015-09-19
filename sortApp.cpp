@@ -71,6 +71,9 @@ void sortNTime(int* pArray, const std::size_t n, const ALGORITHM_TYPE algorithmT
   case ALGORITHM_TYPE::INSERTION_SORT:
     InsertionSort(pArray, n);
     break;
+  case ALGORITHM_TYPE::MERGE_SORT:
+    MergeSort(pArray, 0, n-1);
+    break;
   default: 
     break;
   }
@@ -107,7 +110,7 @@ int main(int argc, char* argv[]){
 
 	 
 	  printArray(testCase, n, " before sorting");
-	  sortNTime(testCase, n, ALGORITHM_TYPE::INSERTION_SORT);
+	  sortNTime(testCase, n, ALGORITHM_TYPE::MERGE_SORT);
 	  printArray(testCase, n, " after sorting");
 	  
 	  std::cout << "-------------------------------------------------------" << std::endl;
