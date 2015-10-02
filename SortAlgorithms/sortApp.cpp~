@@ -1,0 +1,44 @@
+#include <iostream>
+#include <SortAlgorithms.hpp>
+
+#include <chrono>
+
+#include <fstream>
+#include <string>
+using namespace std;
+int main(int argc, char* argv[]){
+  if (argc < 2) {
+    cout << "Usage is -t <testCaseFile>\n";
+    exit(0);
+  }
+  else{
+    if (argv[1] == "-t"){
+      char* testCaseFile = argv[2];
+      loadTestCasesForSortAlgorithms(testCaseFile);
+    }
+  }
+}
+std::list<std::vector<int>>& loadTestCasesForSortAlgorithms(char* testCaseFile){
+  string line;
+  ofstream testCaseFile(testCaseFile);
+  if(testCaseFile.is_open()){
+    std::list<std::vector<int>> testCases;
+    std::vector<int> inputArray;
+    while(getline(testCaseFile, line)){
+      size_t pos = 0;
+      std::string delimiter = ",";
+      std::string token; 
+      while((pos=s.find(delimiter)) != std::string::npos){
+	token = s.substr(0, pos);
+	inputArray.push_back(itoa(token));
+	s.erase(0, pos+delimiter.length());
+      }
+      testCases.push_back(inputArray);
+    }
+    testCaseFile.close();
+  }
+  else{
+    cout << "Unable to open file"; 
+  }
+  return 0;
+}
