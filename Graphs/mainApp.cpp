@@ -42,10 +42,21 @@ int main(int argc, char** argv){
 
 	//G.print();
 
-	G.topologicalSort();
+    std::vector<int> sortedIndices = G.topologicalSort();
+    for (auto& x : sortedIndices){
+        cout << x << ",";
+    }
+    cout << endl;
 
+    
+    findSingleSourceShortestPath(G, 1);
+    findSingleSourceShortestPath(G, 2);
+    findSingleSourceShortestPath(G, 3);
+    findSingleSourceShortestPath(G, 4);
+    findSingleSourceShortestPath(G, 5);
+    findSingleSourceShortestPath(G, 6);
+    
 	Graph<int> clone = G.clone();
-
 	clone.print();
 	
 
