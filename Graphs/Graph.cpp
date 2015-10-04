@@ -40,7 +40,7 @@ void Graph<T>::addEdge(const int mNodeIndex1, const int mNodeIndex2, const int w
 } 
 
 template<typename T>
-std::vector<int>& Graph<T>::topologicalSort(){
+std::vector<int> Graph<T>::topologicalSort(){
 	Stack<int> nextIndices;
 	std::vector<int> nodeInDegree = getIndegree();
 	for(auto i=0; i<nodeInDegree.size(); i++){
@@ -54,15 +54,19 @@ std::vector<int>& Graph<T>::topologicalSort(){
 		linearOrder.push_back(top);
 		
 		if (isKey(top)){
-			const EdgeInfo& edgeInfo  = getEdges(top);
-			for(auto i=0; i< edgeInfo.size(); i++){
-				nodeInDegree[edgeInfo[i].first]--;
-				if(nodeInDegree[edgeInfo[i].first] == 0){
-					nextIndices.push(edgeInfo[i].first);
+			EdgeInfo edgeInfo;
+			bool success = getEdges(edgeInfo, top);
+			if (success){
+				for(auto i=0; i< edgeInfo.size(); i++){
+					nodeInDegree[edgeInfo[i].first]--;
+					if(nodeInDegree[edgeInfo[i].first] == 0){
+						nextIndices.push(edgeInfo[i].first);
+					}
 				}
 			}
 		}
 	}
+	return linearOrder;
 }	
 
 template<typename T>
@@ -111,10 +115,12 @@ std::vector<int> Graph<T>::getIndegree() const{
 }
 
 template<typename T>
-const EdgeInfo& Graph<T>::getEdges(int srcIndex){
+bool Graph<T>::getEdges(EdgeInfo& edgeInfo, const int srcIndex){
 	if(mAdjacencyList.find(srcIndex) != mAdjacencyList.end()){
-		const EdgeInfo& edgeInfo  = mAdjacencyList.find(srcIndex)->second;
-		return edgeInfo;
+		edgeInfo  = mAdjacencyList.find(srcIndex)->second;
+		return true;
+	}else{
+		return false;	
 	}
 }
 template<typename T>

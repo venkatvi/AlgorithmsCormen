@@ -11,15 +11,16 @@ class Graph{
 	public:
 		Graph(){}
 		~Graph(){}
-		int addNode(const T pVal);
-		void addEdge(const int mNodeIndex1, const int mNodeIndex2, const int weight);
-		std::vector<int>& topologicalSort();
+		int addNode(const T);
+		void addEdge(const int, const int, const int);
+		std::vector<int> topologicalSort();
 		Graph clone() const;
 		void print() const;
+
+		bool getEdges(EdgeInfo&, const int);
 	private: 
 		std::vector<int> getIndegree() const;
-		const EdgeInfo& getEdges(int srcIndex);
-		bool isKey(int srcIndex);
+		bool isKey(int);
 		
 		std::vector<Node<T>> mNodes;	
 		std::map<int, EdgeInfo> mAdjacencyList;
