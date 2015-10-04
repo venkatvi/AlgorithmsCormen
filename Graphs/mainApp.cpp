@@ -39,12 +39,14 @@ int main(int argc, char** argv){
 	G.addEdge(eIndex, dIndex);
 	G.addEdge(dIndex, fIndex);
 
-	G.print();
+	//G.print();
 
 	G.topologicalSort();
 
-	
+	Graph<int> clone = G.clone();
 
+	clone.print();
+	
 
 	return 0;
 
