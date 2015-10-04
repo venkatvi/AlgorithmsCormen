@@ -22,6 +22,7 @@ int main(int argc, char** argv){
 	anotherIntStack.pop();
 	anotherIntStack.top();
 	*/
+
 	Graph<int> G;
 
 	int aIndex = G.addNode(1);
@@ -31,13 +32,13 @@ int main(int argc, char** argv){
 	int eIndex = G.addNode(5);
 	int fIndex = G.addNode(6);
 
-	G.addEdge(aIndex, bIndex);
-	G.addEdge(aIndex, cIndex);
-	G.addEdge(bIndex, fIndex);
-	G.addEdge(cIndex, dIndex);
-	G.addEdge(cIndex, eIndex);
-	G.addEdge(eIndex, dIndex);
-	G.addEdge(dIndex, fIndex);
+	G.addEdge(aIndex, bIndex, 1);
+	G.addEdge(aIndex, cIndex, 2);
+	G.addEdge(bIndex, fIndex, 3);
+	G.addEdge(cIndex, dIndex, 4);
+	G.addEdge(cIndex, eIndex, 1);
+	G.addEdge(eIndex, dIndex, 2);
+	G.addEdge(dIndex, fIndex, 1);
 
 	//G.print();
 

@@ -3,23 +3,25 @@
 #include <vector>
 #include <map>
 #include "Node.hpp"
+typedef std::vector<std::pair<int,int>> EdgeInfo;
+typedef std::pair<int,int> Edge;
 
 template<typename T>
 class Graph{
 	public:
 		Graph(){}
 		~Graph(){}
-		int addNode(T pVal);
-		void addEdge(int mNodeIndex1, int mNodeIndex2);
-		void topologicalSort();
+		int addNode(const T pVal);
+		void addEdge(const int mNodeIndex1, const int mNodeIndex2, const int weight);
+		std::vector<int>& topologicalSort();
 		Graph clone() const;
 		void print() const;
 	private: 
 		std::vector<int> getIndegree() const;
-		const std::vector<int>& getAdjacentIndices(int srcIndex);
+		const EdgeInfo& getEdges(int srcIndex);
 		bool isKey(int srcIndex);
 		
 		std::vector<Node<T>> mNodes;	
-		std::map<int, std::vector<int>> mAdjacencyList;
+		std::map<int, EdgeInfo> mAdjacencyList;
 };
 #endif

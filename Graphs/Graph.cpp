@@ -7,29 +7,40 @@
 using namespace std;
 
 template<typename T>
-int Graph<T>::addNode(T pVal){
+int Graph<T>::addNode(const T pVal){
 	Node<T> pNode(pVal);
 	mNodes.push_back(pNode);
 	return mNodes.size()-1;
 }
 
+
+struct EdgeComparator{
+	public:
+		EdgeComparator(const int pVal): mVal(pVal){}
+ 		bool operator()(const Edge& pEdge){
+			return pEdge.first == mVal;
+		}
+	private:
+		int mVal;
+};
+
 template<typename T>
-void Graph<T>::addEdge(int mNodeIndex1, int mNodeIndex2){
+void Graph<T>::addEdge(const int mNodeIndex1, const int mNodeIndex2, const int weight){
 	if (mAdjacencyList.find(mNodeIndex1) != mAdjacencyList.end()){
-		std::vector<int>& adjacentNodeIndices =	mAdjacencyList.find(mNodeIndex1)->second;
-		if(std::find(adjacentNodeIndices.begin(), adjacentNodeIndices.end(), mNodeIndex2) == adjacentNodeIndices.end()) {
-			adjacentNodeIndices.push_back(mNodeIndex2);
+		EdgeInfo& edgeInfo =	mAdjacencyList.find(mNodeIndex1)->second;
+		if(std::find_if(edgeInfo.begin(), edgeInfo.end(), EdgeComparator(mNodeIndex2)) == edgeInfo.end()) {
+			edgeInfo.push_back(Edge(mNodeIndex2, weight));
 
 		}
 	}else{
-		std::vector<int> adjacentNodeIndices;
-		adjacentNodeIndices.push_back(mNodeIndex2);
-		mAdjacencyList.insert(std::pair<int, std::vector<int>>(mNodeIndex1, adjacentNodeIndices));
+		EdgeInfo edgeInfo;
+		edgeInfo.push_back(Edge(mNodeIndex2, weight));
+		mAdjacencyList.insert(std::pair<int, EdgeInfo>(mNodeIndex1, edgeInfo));
 	}
 } 
 
 template<typename T>
-void Graph<T>::topologicalSort(){
+std::vector<int>& Graph<T>::topologicalSort(){
 	Stack<int> nextIndices;
 	std::vector<int> nodeInDegree = getIndegree();
 	for(auto i=0; i<nodeInDegree.size(); i++){
@@ -37,17 +48,17 @@ void Graph<T>::topologicalSort(){
 			nextIndices.push(i);	
 		}
 	}
-	cout << "Printing topological order... " << endl;
+	std::vector<int> linearOrder;
 	while(!nextIndices.isEmpty()){
 		int top = nextIndices.pop();
-		cout << top << endl;
-
+		linearOrder.push_back(top);
+		
 		if (isKey(top)){
-			const std::vector<int>& adjacentIndices  = getAdjacentIndices(top);
-			for(auto i=0; i< adjacentIndices.size(); i++){
-				nodeInDegree[adjacentIndices[i]]--;
-				if(nodeInDegree[adjacentIndices[i]] == 0){
-					nextIndices.push(adjacentIndices[i]);
+			const EdgeInfo& edgeInfo  = getEdges(top);
+			for(auto i=0; i< edgeInfo.size(); i++){
+				nodeInDegree[edgeInfo[i].first]--;
+				if(nodeInDegree[edgeInfo[i].first] == 0){
+					nextIndices.push(edgeInfo[i].first);
 				}
 			}
 		}
@@ -63,22 +74,23 @@ Graph<T> Graph<T>::clone() const {
 	}
 	for (auto& x: mAdjacencyList){
 		auto nodeId = x.first;	
-		auto adjacentNodeVector = x.second;
+		auto edgeVector = x.second;
 
-		for(auto& y: adjacentNodeVector){
-			graphClone.addEdge(nodeId, y);
+		for(auto& y: edgeVector){
+			graphClone.addEdge(nodeId, y.first, y.second);
 		}
 	}
 	return graphClone;
 }
+
 template<typename T>
 void Graph<T>::print() const {
 	cout << "Printing graph ... " << endl;
 	for(auto& x:mAdjacencyList){
 		cout << "Key: " << x.first << " Values: ";
-		const std::vector<int>& adjacentIndices = x.second;
-		for(auto y: adjacentIndices){
-			cout << y  << ",";
+		const EdgeInfo& edges = x.second;
+		for(auto y: edges){
+			cout << y.first  << ",";
 		}
 		cout << endl;
 	}
@@ -89,9 +101,9 @@ std::vector<int> Graph<T>::getIndegree() const{
 	std::vector<int> inDegree(mNodes.size(), 0);
 	for(auto i=0; i<mNodes.size(); ++i){
 		if (mAdjacencyList.find(i) != mAdjacencyList.end()){
-			const std::vector<int>& incidentNodes = mAdjacencyList.find(i)->second;
-			for(auto x: incidentNodes){
-				inDegree[x]++;
+			const EdgeInfo& edges = mAdjacencyList.find(i)->second;
+			for(auto x: edges){
+				inDegree[x.first]++;
 			}
 		}
 	}
@@ -99,17 +111,16 @@ std::vector<int> Graph<T>::getIndegree() const{
 }
 
 template<typename T>
-const std::vector<int>& Graph<T>::getAdjacentIndices(int srcIndex){
+const EdgeInfo& Graph<T>::getEdges(int srcIndex){
 	if(mAdjacencyList.find(srcIndex) != mAdjacencyList.end()){
-		const std::vector<int>&	adjacentIndices  = mAdjacencyList.find(srcIndex)->second;
-		return adjacentIndices;
+		const EdgeInfo& edgeInfo  = mAdjacencyList.find(srcIndex)->second;
+		return edgeInfo;
 	}
 }
 template<typename T>
 bool Graph<T>::isKey(int srcIndex){
 	return (mAdjacencyList.find(srcIndex) != mAdjacencyList.end());
 }
-
 
 template class Graph<int>;
 
