@@ -123,10 +123,20 @@ bool Graph<T>::getEdges(EdgeInfo& edgeInfo, const int srcIndex){
 		return false;	
 	}
 }
+
+template<typename T>
+std::vector<Node<T>> Graph<T>::getNodes() const{
+	return mNodes;
+}
 template<typename T>
 bool Graph<T>::isKey(int srcIndex){
 	return (mAdjacencyList.find(srcIndex) != mAdjacencyList.end());
 }
 
+template<typename T>
+bool Graph<T>::getAllEdges(std::map<int, EdgeInfo>& edges){
+	edges = mAdjacencyList;
+	return true;
+}
 template class Graph<int>;
 

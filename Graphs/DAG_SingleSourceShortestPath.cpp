@@ -2,6 +2,7 @@
 #include <vector>
 #include <map>
 #include <iostream>
+#include <limits.h>
 using namespace std;
 template<typename T>
 void findSingleSourceShortestPath(Graph<T>& G, const int pNodeIndex){

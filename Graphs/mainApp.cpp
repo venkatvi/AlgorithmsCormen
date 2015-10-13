@@ -39,26 +39,29 @@ int main(int argc, char** argv){
 	G.addEdge(cIndex, eIndex, 1);
 	G.addEdge(eIndex, dIndex, 2);
 	G.addEdge(dIndex, fIndex, 1);
+	G.addEdge(fIndex, bIndex, 2);
+	G.addEdge(aIndex, dIndex, 3);
 
 	//G.print();
+	/*
 	cout << "Topological Sort Order.. ";	
 	std::vector<int> sortedIndices = G.topologicalSort();
 	for (auto& x : sortedIndices){
 		cout << x << ",";
 	}
 	cout << endl;
-
-    	
+*/
+  	dijkstras(G, aIndex);  	
 //	findSingleSourceShortestPath(G, aIndex);
-	findSingleSourceShortestPath(G, 2);
+//	findSingleSourceShortestPath(G, 2);
 /*	findSingleSourceShortestPath(G, 3);
 	findSingleSourceShortestPath(G, 4);
 	findSingleSourceShortestPath(G, 5);
 	findSingleSourceShortestPath(G, 6);
-*/	
+
 	Graph<int> clone = G.clone();
 	clone.print();
-	
+*/	
 
 	return 0;
 

@@ -17,7 +17,9 @@ class Graph{
 		Graph clone() const;
 		void print() const;
 
+		std::vector<Node<T>> getNodes() const;
 		bool getEdges(EdgeInfo&, const int);
+		bool getAllEdges(std::map<int, EdgeInfo>&);
 	private: 
 		std::vector<int> getIndegree() const;
 		bool isKey(int);
