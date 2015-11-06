@@ -1,0 +1,246 @@
+Printing distances.. 
+0-0
+1-1
+2-2
+3-3
+4-3
+5-4
+6-2147483647
+Printing previous nodes... 
+1-0
+2-0
+3-0
+4-2
+5-1
+6--1
+U: 0 V:0 X: 1 ShortestPathInvolvingX:-2147483648 shortestPathAvailable:2147483647
+U: 0 V:1 X: 1 ShortestPathInvolvingX:-2147483648 shortestPathAvailable:1
+U: 0 V:2 X: 1 ShortestPathInvolvingX:-2147483648 shortestPathAvailable:2
+U: 0 V:3 X: 1 ShortestPathInvolvingX:-2147483648 shortestPathAvailable:3
+U: 0 V:4 X: 1 ShortestPathInvolvingX:-2147483648 shortestPathAvailable:2147483647
+U: 0 V:5 X: 1 ShortestPathInvolvingX:4 shortestPathAvailable:2147483647
+U: 1 V:0 X: 1 ShortestPathInvolvingX:-2 shortestPathAvailable:2147483647
+U: 1 V:1 X: 1 ShortestPathInvolvingX:-2 shortestPathAvailable:2147483647
+U: 1 V:2 X: 1 ShortestPathInvolvingX:-2 shortestPathAvailable:2147483647
+U: 1 V:3 X: 1 ShortestPathInvolvingX:-2 shortestPathAvailable:2147483647
+U: 1 V:4 X: 1 ShortestPathInvolvingX:-2 shortestPathAvailable:2147483647
+U: 1 V:5 X: 1 ShortestPathInvolvingX:-2147483646 shortestPathAvailable:3
+U: 2 V:0 X: 1 ShortestPathInvolvingX:-2 shortestPathAvailable:2147483647
+U: 2 V:1 X: 1 ShortestPathInvolvingX:-2 shortestPathAvailable:2147483647
+U: 2 V:2 X: 1 ShortestPathInvolvingX:-2 shortestPathAvailable:2147483647
+U: 2 V:3 X: 1 ShortestPathInvolvingX:-2 shortestPathAvailable:4
+U: 2 V:4 X: 1 ShortestPathInvolvingX:-2 shortestPathAvailable:1
+U: 2 V:5 X: 1 ShortestPathInvolvingX:-2147483646 shortestPathAvailable:2147483647
+U: 3 V:0 X: 1 ShortestPathInvolvingX:-2 shortestPathAvailable:2147483647
+U: 3 V:1 X: 1 ShortestPathInvolvingX:-2 shortestPathAvailable:2147483647
+U: 3 V:2 X: 1 ShortestPathInvolvingX:-2 shortestPathAvailable:2147483647
+U: 3 V:3 X: 1 ShortestPathInvolvingX:-2 shortestPathAvailable:2147483647
+U: 3 V:4 X: 1 ShortestPathInvolvingX:-2 shortestPathAvailable:2147483647
+U: 3 V:5 X: 1 ShortestPathInvolvingX:-2147483646 shortestPathAvailable:1
+U: 4 V:0 X: 1 ShortestPathInvolvingX:-2 shortestPathAvailable:2147483647
+U: 4 V:1 X: 1 ShortestPathInvolvingX:-2 shortestPathAvailable:2147483647
+U: 4 V:2 X: 1 ShortestPathInvolvingX:-2 shortestPathAvailable:2147483647
+U: 4 V:3 X: 1 ShortestPathInvolvingX:-2 shortestPathAvailable:2
+U: 4 V:4 X: 1 ShortestPathInvolvingX:-2 shortestPathAvailable:2147483647
+U: 4 V:5 X: 1 ShortestPathInvolvingX:-2147483646 shortestPathAvailable:2147483647
+U: 5 V:0 X: 1 ShortestPathInvolvingX:-2147483647 shortestPathAvailable:2147483647
+U: 5 V:1 X: 1 ShortestPathInvolvingX:-2147483647 shortestPathAvailable:2
+U: 5 V:2 X: 1 ShortestPathInvolvingX:-2147483647 shortestPathAvailable:2147483647
+U: 5 V:3 X: 1 ShortestPathInvolvingX:-2147483647 shortestPathAvailable:2147483647
+U: 5 V:4 X: 1 ShortestPathInvolvingX:-2147483647 shortestPathAvailable:2147483647
+U: 5 V:5 X: 1 ShortestPathInvolvingX:5 shortestPathAvailable:2147483647
+U: 0 V:0 X: 2 ShortestPathInvolvingX:2147483646 shortestPathAvailable:-2147483648
+U: 0 V:1 X: 2 ShortestPathInvolvingX:2147483646 shortestPathAvailable:-2147483648
+U: 0 V:2 X: 2 ShortestPathInvolvingX:2147483646 shortestPathAvailable:-2147483648
+U: 0 V:3 X: 2 ShortestPathInvolvingX:2147483646 shortestPathAvailable:-2147483648
+U: 0 V:4 X: 2 ShortestPathInvolvingX:2147483646 shortestPathAvailable:-2147483648
+U: 0 V:5 X: 2 ShortestPathInvolvingX:2 shortestPathAvailable:4
+U: 1 V:0 X: 2 ShortestPathInvolvingX:-4 shortestPathAvailable:-2
+U: 1 V:1 X: 2 ShortestPathInvolvingX:-4 shortestPathAvailable:-2
+U: 1 V:2 X: 2 ShortestPathInvolvingX:-4 shortestPathAvailable:-2
+U: 1 V:3 X: 2 ShortestPathInvolvingX:-4 shortestPathAvailable:-2
+U: 1 V:4 X: 2 ShortestPathInvolvingX:-4 shortestPathAvailable:-2
+U: 1 V:5 X: 2 ShortestPathInvolvingX:-2147483648 shortestPathAvailable:-2147483646
+U: 2 V:0 X: 2 ShortestPathInvolvingX:-4 shortestPathAvailable:-2
+U: 2 V:1 X: 2 ShortestPathInvolvingX:-4 shortestPathAvailable:-2
+U: 2 V:2 X: 2 ShortestPathInvolvingX:-4 shortestPathAvailable:-2
+U: 2 V:3 X: 2 ShortestPathInvolvingX:-4 shortestPathAvailable:-2
+U: 2 V:4 X: 2 ShortestPathInvolvingX:-4 shortestPathAvailable:-2
+U: 2 V:5 X: 2 ShortestPathInvolvingX:-2147483648 shortestPathAvailable:-2147483646
+U: 3 V:0 X: 2 ShortestPathInvolvingX:-4 shortestPathAvailable:-2
+U: 3 V:1 X: 2 ShortestPathInvolvingX:-4 shortestPathAvailable:-2
+U: 3 V:2 X: 2 ShortestPathInvolvingX:-4 shortestPathAvailable:-2
+U: 3 V:3 X: 2 ShortestPathInvolvingX:-4 shortestPathAvailable:-2
+U: 3 V:4 X: 2 ShortestPathInvolvingX:-4 shortestPathAvailable:-2
+U: 3 V:5 X: 2 ShortestPathInvolvingX:-2147483648 shortestPathAvailable:-2147483646
+U: 4 V:0 X: 2 ShortestPathInvolvingX:-4 shortestPathAvailable:-2
+U: 4 V:1 X: 2 ShortestPathInvolvingX:-4 shortestPathAvailable:-2
+U: 4 V:2 X: 2 ShortestPathInvolvingX:-4 shortestPathAvailable:-2
+U: 4 V:3 X: 2 ShortestPathInvolvingX:-4 shortestPathAvailable:-2
+U: 4 V:4 X: 2 ShortestPathInvolvingX:-4 shortestPathAvailable:-2
+U: 4 V:5 X: 2 ShortestPathInvolvingX:-2147483648 shortestPathAvailable:-2147483646
+U: 5 V:0 X: 2 ShortestPathInvolvingX:2147483647 shortestPathAvailable:-2147483647
+U: 5 V:1 X: 2 ShortestPathInvolvingX:2147483647 shortestPathAvailable:-2147483647
+U: 5 V:2 X: 2 ShortestPathInvolvingX:2147483647 shortestPathAvailable:-2147483647
+U: 5 V:3 X: 2 ShortestPathInvolvingX:2147483647 shortestPathAvailable:-2147483647
+U: 5 V:4 X: 2 ShortestPathInvolvingX:2147483647 shortestPathAvailable:-2147483647
+U: 5 V:5 X: 2 ShortestPathInvolvingX:3 shortestPathAvailable:5
+U: 0 V:0 X: 3 ShortestPathInvolvingX:2147483644 shortestPathAvailable:-2147483648
+U: 0 V:1 X: 3 ShortestPathInvolvingX:2147483644 shortestPathAvailable:-2147483648
+U: 0 V:2 X: 3 ShortestPathInvolvingX:2147483644 shortestPathAvailable:-2147483648
+U: 0 V:3 X: 3 ShortestPathInvolvingX:2147483644 shortestPathAvailable:-2147483648
+U: 0 V:4 X: 3 ShortestPathInvolvingX:2147483644 shortestPathAvailable:-2147483648
+U: 0 V:5 X: 3 ShortestPathInvolvingX:0 shortestPathAvailable:2
+U: 1 V:0 X: 3 ShortestPathInvolvingX:-8 shortestPathAvailable:-4
+U: 1 V:1 X: 3 ShortestPathInvolvingX:-8 shortestPathAvailable:-4
+U: 1 V:2 X: 3 ShortestPathInvolvingX:-8 shortestPathAvailable:-4
+U: 1 V:3 X: 3 ShortestPathInvolvingX:-8 shortestPathAvailable:-4
+U: 1 V:4 X: 3 ShortestPathInvolvingX:-8 shortestPathAvailable:-4
+U: 1 V:5 X: 3 ShortestPathInvolvingX:2147483644 shortestPathAvailable:-2147483648
+U: 2 V:0 X: 3 ShortestPathInvolvingX:-8 shortestPathAvailable:-4
+U: 2 V:1 X: 3 ShortestPathInvolvingX:-8 shortestPathAvailable:-4
+U: 2 V:2 X: 3 ShortestPathInvolvingX:-8 shortestPathAvailable:-4
+U: 2 V:3 X: 3 ShortestPathInvolvingX:-8 shortestPathAvailable:-4
+U: 2 V:4 X: 3 ShortestPathInvolvingX:-8 shortestPathAvailable:-4
+U: 2 V:5 X: 3 ShortestPathInvolvingX:2147483644 shortestPathAvailable:-2147483648
+U: 3 V:0 X: 3 ShortestPathInvolvingX:-8 shortestPathAvailable:-4
+U: 3 V:1 X: 3 ShortestPathInvolvingX:-8 shortestPathAvailable:-4
+U: 3 V:2 X: 3 ShortestPathInvolvingX:-8 shortestPathAvailable:-4
+U: 3 V:3 X: 3 ShortestPathInvolvingX:-8 shortestPathAvailable:-4
+U: 3 V:4 X: 3 ShortestPathInvolvingX:-8 shortestPathAvailable:-4
+U: 3 V:5 X: 3 ShortestPathInvolvingX:2147483644 shortestPathAvailable:-2147483648
+U: 4 V:0 X: 3 ShortestPathInvolvingX:-8 shortestPathAvailable:-4
+U: 4 V:1 X: 3 ShortestPathInvolvingX:-8 shortestPathAvailable:-4
+U: 4 V:2 X: 3 ShortestPathInvolvingX:-8 shortestPathAvailable:-4
+U: 4 V:3 X: 3 ShortestPathInvolvingX:-8 shortestPathAvailable:-4
+U: 4 V:4 X: 3 ShortestPathInvolvingX:-8 shortestPathAvailable:-4
+U: 4 V:5 X: 3 ShortestPathInvolvingX:2147483644 shortestPathAvailable:-2147483648
+U: 5 V:0 X: 3 ShortestPathInvolvingX:2147483645 shortestPathAvailable:-2147483647
+U: 5 V:1 X: 3 ShortestPathInvolvingX:2147483645 shortestPathAvailable:-2147483647
+U: 5 V:2 X: 3 ShortestPathInvolvingX:2147483645 shortestPathAvailable:-2147483647
+U: 5 V:3 X: 3 ShortestPathInvolvingX:2147483645 shortestPathAvailable:-2147483647
+U: 5 V:4 X: 3 ShortestPathInvolvingX:2147483645 shortestPathAvailable:-2147483647
+U: 5 V:5 X: 3 ShortestPathInvolvingX:1 shortestPathAvailable:3
+U: 0 V:0 X: 4 ShortestPathInvolvingX:2147483640 shortestPathAvailable:-2147483648
+U: 0 V:1 X: 4 ShortestPathInvolvingX:2147483640 shortestPathAvailable:-2147483648
+U: 0 V:2 X: 4 ShortestPathInvolvingX:2147483640 shortestPathAvailable:-2147483648
+U: 0 V:3 X: 4 ShortestPathInvolvingX:2147483640 shortestPathAvailable:-2147483648
+U: 0 V:4 X: 4 ShortestPathInvolvingX:2147483640 shortestPathAvailable:-2147483648
+U: 0 V:5 X: 4 ShortestPathInvolvingX:0 shortestPathAvailable:0
+U: 1 V:0 X: 4 ShortestPathInvolvingX:-16 shortestPathAvailable:-8
+U: 1 V:1 X: 4 ShortestPathInvolvingX:-16 shortestPathAvailable:-8
+U: 1 V:2 X: 4 ShortestPathInvolvingX:-16 shortestPathAvailable:-8
+U: 1 V:3 X: 4 ShortestPathInvolvingX:-16 shortestPathAvailable:-8
+U: 1 V:4 X: 4 ShortestPathInvolvingX:-16 shortestPathAvailable:-8
+U: 1 V:5 X: 4 ShortestPathInvolvingX:2147483640 shortestPathAvailable:-2147483648
+U: 2 V:0 X: 4 ShortestPathInvolvingX:-16 shortestPathAvailable:-8
+U: 2 V:1 X: 4 ShortestPathInvolvingX:-16 shortestPathAvailable:-8
+U: 2 V:2 X: 4 ShortestPathInvolvingX:-16 shortestPathAvailable:-8
+U: 2 V:3 X: 4 ShortestPathInvolvingX:-16 shortestPathAvailable:-8
+U: 2 V:4 X: 4 ShortestPathInvolvingX:-16 shortestPathAvailable:-8
+U: 2 V:5 X: 4 ShortestPathInvolvingX:2147483640 shortestPathAvailable:-2147483648
+U: 3 V:0 X: 4 ShortestPathInvolvingX:-16 shortestPathAvailable:-8
+U: 3 V:1 X: 4 ShortestPathInvolvingX:-16 shortestPathAvailable:-8
+U: 3 V:2 X: 4 ShortestPathInvolvingX:-16 shortestPathAvailable:-8
+U: 3 V:3 X: 4 ShortestPathInvolvingX:-16 shortestPathAvailable:-8
+U: 3 V:4 X: 4 ShortestPathInvolvingX:-16 shortestPathAvailable:-8
+U: 3 V:5 X: 4 ShortestPathInvolvingX:2147483640 shortestPathAvailable:-2147483648
+U: 4 V:0 X: 4 ShortestPathInvolvingX:-16 shortestPathAvailable:-8
+U: 4 V:1 X: 4 ShortestPathInvolvingX:-16 shortestPathAvailable:-8
+U: 4 V:2 X: 4 ShortestPathInvolvingX:-16 shortestPathAvailable:-8
+U: 4 V:3 X: 4 ShortestPathInvolvingX:-16 shortestPathAvailable:-8
+U: 4 V:4 X: 4 ShortestPathInvolvingX:-16 shortestPathAvailable:-8
+U: 4 V:5 X: 4 ShortestPathInvolvingX:2147483640 shortestPathAvailable:-2147483648
+U: 5 V:0 X: 4 ShortestPathInvolvingX:2147483641 shortestPathAvailable:-2147483647
+U: 5 V:1 X: 4 ShortestPathInvolvingX:2147483641 shortestPathAvailable:-2147483647
+U: 5 V:2 X: 4 ShortestPathInvolvingX:2147483641 shortestPathAvailable:-2147483647
+U: 5 V:3 X: 4 ShortestPathInvolvingX:2147483641 shortestPathAvailable:-2147483647
+U: 5 V:4 X: 4 ShortestPathInvolvingX:2147483641 shortestPathAvailable:-2147483647
+U: 5 V:5 X: 4 ShortestPathInvolvingX:1 shortestPathAvailable:1
+U: 0 V:0 X: 5 ShortestPathInvolvingX:-2147483647 shortestPathAvailable:-2147483648
+U: 0 V:1 X: 5 ShortestPathInvolvingX:-2147483647 shortestPathAvailable:-2147483648
+U: 0 V:2 X: 5 ShortestPathInvolvingX:-2147483647 shortestPathAvailable:-2147483648
+U: 0 V:3 X: 5 ShortestPathInvolvingX:-2147483647 shortestPathAvailable:-2147483648
+U: 0 V:4 X: 5 ShortestPathInvolvingX:-2147483647 shortestPathAvailable:-2147483648
+U: 0 V:5 X: 5 ShortestPathInvolvingX:1 shortestPathAvailable:0
+U: 1 V:0 X: 5 ShortestPathInvolvingX:1 shortestPathAvailable:-16
+U: 1 V:1 X: 5 ShortestPathInvolvingX:1 shortestPathAvailable:-16
+U: 1 V:2 X: 5 ShortestPathInvolvingX:1 shortestPathAvailable:-16
+U: 1 V:3 X: 5 ShortestPathInvolvingX:1 shortestPathAvailable:-16
+U: 1 V:4 X: 5 ShortestPathInvolvingX:1 shortestPathAvailable:-16
+U: 1 V:5 X: 5 ShortestPathInvolvingX:-2147483647 shortestPathAvailable:-2147483648
+U: 2 V:0 X: 5 ShortestPathInvolvingX:1 shortestPathAvailable:-16
+U: 2 V:1 X: 5 ShortestPathInvolvingX:1 shortestPathAvailable:-16
+U: 2 V:2 X: 5 ShortestPathInvolvingX:1 shortestPathAvailable:-16
+U: 2 V:3 X: 5 ShortestPathInvolvingX:1 shortestPathAvailable:-16
+U: 2 V:4 X: 5 ShortestPathInvolvingX:1 shortestPathAvailable:-16
+U: 2 V:5 X: 5 ShortestPathInvolvingX:-2147483647 shortestPathAvailable:-2147483648
+U: 3 V:0 X: 5 ShortestPathInvolvingX:1 shortestPathAvailable:-16
+U: 3 V:1 X: 5 ShortestPathInvolvingX:1 shortestPathAvailable:-16
+U: 3 V:2 X: 5 ShortestPathInvolvingX:1 shortestPathAvailable:-16
+U: 3 V:3 X: 5 ShortestPathInvolvingX:1 shortestPathAvailable:-16
+U: 3 V:4 X: 5 ShortestPathInvolvingX:1 shortestPathAvailable:-16
+U: 3 V:5 X: 5 ShortestPathInvolvingX:-2147483647 shortestPathAvailable:-2147483648
+U: 4 V:0 X: 5 ShortestPathInvolvingX:1 shortestPathAvailable:-16
+U: 4 V:1 X: 5 ShortestPathInvolvingX:1 shortestPathAvailable:-16
+U: 4 V:2 X: 5 ShortestPathInvolvingX:1 shortestPathAvailable:-16
+U: 4 V:3 X: 5 ShortestPathInvolvingX:1 shortestPathAvailable:-16
+U: 4 V:4 X: 5 ShortestPathInvolvingX:1 shortestPathAvailable:-16
+U: 4 V:5 X: 5 ShortestPathInvolvingX:-2147483647 shortestPathAvailable:-2147483648
+U: 5 V:0 X: 5 ShortestPathInvolvingX:-2147483646 shortestPathAvailable:-2147483647
+U: 5 V:1 X: 5 ShortestPathInvolvingX:-2147483646 shortestPathAvailable:-2147483647
+U: 5 V:2 X: 5 ShortestPathInvolvingX:-2147483646 shortestPathAvailable:-2147483647
+U: 5 V:3 X: 5 ShortestPathInvolvingX:-2147483646 shortestPathAvailable:-2147483647
+U: 5 V:4 X: 5 ShortestPathInvolvingX:-2147483646 shortestPathAvailable:-2147483647
+U: 5 V:5 X: 5 ShortestPathInvolvingX:2 shortestPathAvailable:1
+U: 0 V:0 X: 6 ShortestPathInvolvingX:1420778416 shortestPathAvailable:-2147483648
+U: 0 V:1 X: 6 ShortestPathInvolvingX:2016424680 shortestPathAvailable:-2147483648
+U: 0 V:2 X: 6 ShortestPathInvolvingX:2016424680 shortestPathAvailable:-2147483648
+U: 0 V:3 X: 6 ShortestPathInvolvingX:1420773232 shortestPathAvailable:-2147483648
+U: 0 V:4 X: 6 ShortestPathInvolvingX:1420778384 shortestPathAvailable:-2147483648
+U: 0 V:5 X: 6 ShortestPathInvolvingX:683691792 shortestPathAvailable:0
+U: 1 V:0 X: 6 ShortestPathInvolvingX:1420778416 shortestPathAvailable:-16
+U: 1 V:1 X: 6 ShortestPathInvolvingX:2016424680 shortestPathAvailable:-16
+U: 1 V:2 X: 6 ShortestPathInvolvingX:2016424680 shortestPathAvailable:-16
+U: 1 V:3 X: 6 ShortestPathInvolvingX:1420773232 shortestPathAvailable:-16
+U: 1 V:4 X: 6 ShortestPathInvolvingX:1420778384 shortestPathAvailable:-16
+U: 1 V:5 X: 6 ShortestPathInvolvingX:683691792 shortestPathAvailable:-2147483648
+U: 2 V:0 X: 6 ShortestPathInvolvingX:1420778416 shortestPathAvailable:-16
+U: 2 V:1 X: 6 ShortestPathInvolvingX:2016424680 shortestPathAvailable:-16
+U: 2 V:2 X: 6 ShortestPathInvolvingX:2016424680 shortestPathAvailable:-16
+U: 2 V:3 X: 6 ShortestPathInvolvingX:1420773232 shortestPathAvailable:-16
+U: 2 V:4 X: 6 ShortestPathInvolvingX:1420778384 shortestPathAvailable:-16
+U: 2 V:5 X: 6 ShortestPathInvolvingX:683691792 shortestPathAvailable:-2147483648
+U: 3 V:0 X: 6 ShortestPathInvolvingX:1420778416 shortestPathAvailable:-16
+U: 3 V:1 X: 6 ShortestPathInvolvingX:2016424680 shortestPathAvailable:-16
+U: 3 V:2 X: 6 ShortestPathInvolvingX:2016424680 shortestPathAvailable:-16
+U: 3 V:3 X: 6 ShortestPathInvolvingX:1420773232 shortestPathAvailable:-16
+U: 3 V:4 X: 6 ShortestPathInvolvingX:1420778384 shortestPathAvailable:-16
+U: 3 V:5 X: 6 ShortestPathInvolvingX:683691792 shortestPathAvailable:-2147483648
+U: 4 V:0 X: 6 ShortestPathInvolvingX:-726705215 shortestPathAvailable:-16
+U: 4 V:1 X: 6 ShortestPathInvolvingX:-131058951 shortestPathAvailable:-16
+U: 4 V:2 X: 6 ShortestPathInvolvingX:-131058951 shortestPathAvailable:-16
+U: 4 V:3 X: 6 ShortestPathInvolvingX:-726710399 shortestPathAvailable:-16
+U: 4 V:4 X: 6 ShortestPathInvolvingX:-726705247 shortestPathAvailable:-16
+U: 4 V:5 X: 6 ShortestPathInvolvingX:-1463791839 shortestPathAvailable:-2147483648
+U: 5 V:0 X: 6 ShortestPathInvolvingX:-1453410432 shortestPathAvailable:-2147483647
+U: 5 V:1 X: 6 ShortestPathInvolvingX:-857764168 shortestPathAvailable:-2147483647
+U: 5 V:2 X: 6 ShortestPathInvolvingX:-857764168 shortestPathAvailable:-2147483647
+U: 5 V:3 X: 6 ShortestPathInvolvingX:-1453415616 shortestPathAvailable:-2147483647
+U: 5 V:4 X: 6 ShortestPathInvolvingX:-1453410464 shortestPathAvailable:-2147483647
+U: 5 V:5 X: 6 ShortestPathInvolvingX:2104470240 shortestPathAvailable:1
+Shortest Paths from node 0
+to node 1 : -2147483648
+to node 2 : -2147483648
+to node 3 : -2147483648
+Shortest Paths from node 1
+to node 5 : -2147483648
+Shortest Paths from node 2
+to node 3 : -16
+to node 4 : -16
+Shortest Paths from node 3
+to node 5 : -2147483648
+Shortest Paths from node 4
+to node 3 : -16
+Shortest Paths from node 5
+to node 1 : -2147483647
