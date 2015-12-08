@@ -38,9 +38,10 @@ public:
     	}
     }
     void rotate3(vector<int>& nums, int k){
-    	if(k < 0 || nums.size() == 0) { return; }
+    	if(k < 0 || nums.size() <= 1) { return; }
     	int n = nums.size();
     	
+    	k = k%n;
     	int i = 0, j = n-k-1;
     	while(i<j){
     		swap(nums[i], nums[j]);
@@ -74,7 +75,7 @@ int main(int argc, char** argv){
 	Solution s;
 
 	vector<int> nums = {1, 2, 3,4, 5,6, 7};
-	int numRotations = 100;
+	int numRotations = 7;
 	clock_t t;
 	t = clock();
 	for(int i =0; i<numRotations; i++){
