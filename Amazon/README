@@ -1,0 +1,14 @@
+/* Folder contains all questions listed in career cup website for Amazon dated from "Oct 21, 2015 - ?? "
+As of now there are six pages of programming questions. 
+*/
+checkIfTwoBTHaveSameIntegers.cpp - http://www.careercup.com/question?id=5078919034175488
+checkIfAStringHasValidParantheses.cpp - http://www.careercup.com/question?id=5193265659772928
+maxGoldMinedFromGrid.cpp - http://www.careercup.com/question?id=5707163630567424
+printFirstNLastNodeOfEachLevelInTree.cpp - http://www.careercup.com/question?id=5714594192424960
+findIfPathExistsBetweenTwoCellsOfMatrix.cpp - http://www.careercup.com/question?id=5125942617833472 - INCOMPLETE
+findMinWindowWithDistinctCharsInString.cpp - http://www.careercup.com/question?id=5630275595796480
+findMaxChocolatesThatFitInABox.cpp - http://www.careercup.com/question?id=5121982330830848 - INCOMPLETE
+findArrayOfNosWhichSumToK.cpp - http://www.careercup.com/question?id=5202222520467456
+
+
+

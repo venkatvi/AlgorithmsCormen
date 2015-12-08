@@ -1,4 +1,4 @@
-#ifndef STACk_H
+#ifndef STACK_H
 #define STACK_H
 #include <vector>
 template<typename T>

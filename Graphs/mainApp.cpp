@@ -23,6 +23,7 @@ int main(int argc, char** argv){
 	anotherIntStack.top();
 	*/
 
+	
 	Graph<int> G;
 
 	int aIndex = G.addNode(1);
@@ -51,7 +52,9 @@ int main(int argc, char** argv){
 	}
 	cout << endl;
 */
-  	dijkstras(G, aIndex);  	
+//  	dijkstras(G, aIndex);  	
+bellmanFord(G, aIndex);
+floydWarshall(G);
 //	findSingleSourceShortestPath(G, aIndex);
 //	findSingleSourceShortestPath(G, 2);
 /*	findSingleSourceShortestPath(G, 3);

@@ -4,6 +4,7 @@
 #include <iostream>
 #include <limits.h>
 #include <algorithm>
+//#include <boost/range/irange.hpp>
 using namespace std;
 
 typedef std::pair<int, int> ShortestPath;
@@ -17,8 +18,8 @@ void findSingleSourceShortestPath(Graph<T>& G, const int pNodeIndex){
 
 	for (auto& x: sortedNodeIndices){
 		cout << "SortedNodeIndex: " << x << endl;
-		shortestPath.insert(ShortestPath(x, INT_MAX));
-		previousNodeIndex.insert(PrevNodeInfo(x, -1));
+		shortestPath.insert({x, INT_MAX});
+		previousNodeIndex.insert({x, -1});
 	}
 	for(auto& x: sortedNodeIndices){
 		if (x == pNodeIndex){
@@ -109,9 +110,9 @@ void dijkstras(Graph<T>& G, const int pNodeIndex){
 	
 }
 
-template<typename T>
+template<	typename T>
 void bellmanFord(Graph<T>& G, const int pNodeIndex){
-	std::vector<Node<T>>& nodes = G.getNodes(); 
+	std::vector<Node<T>> nodes = G.getNodes(); 
 	std::map<int, int> shortestPath;
 	std::map<int, int> previousNodeIndex;
 
@@ -120,17 +121,17 @@ void bellmanFord(Graph<T>& G, const int pNodeIndex){
 			shortestPath.insert(ShortestPath(pNodeIndex,0));
 		}
 		else{
-			shortestPath.insert(ShortestPath(x, INT_MAX));
+			shortestPath.insert(ShortestPath(x.getVal(), INT_MAX));
 		}
-		previousNodeIndex.insert(PrevNodeInfo(x, -1));
+		previousNodeIndex.insert(PrevNodeInfo(x.getVal(), -1));
 	}
 	
 	std::map<int, EdgeInfo> edges;
 	bool ret = G.getAllEdges(edges);
 	for(int i=0; i<nodes.size(); i++){
 		for(auto x:edges){
-			const int srcNodeIndex = edges.first;
-			const EdgeInfo& destNodesInfo = edges.second;
+			const int srcNodeIndex = x.first;
+			const EdgeInfo& destNodesInfo = x.second;
 			for (auto y:destNodesInfo){
 				const int destNodeIndex = y.first;
 				const int edgeWeight = y.second;
@@ -152,8 +153,71 @@ void bellmanFord(Graph<T>& G, const int pNodeIndex){
 	}
 	
 }
+template<typename T>
+void floydWarshall(Graph<T>& G){
+	std::vector<Node<T>> nodes = G.getNodes();
+	int n = nodes.size();
+	long long shortestPaths[n][n][n+1];
+	int prev[n][n][n+1];
+
+	for (int x=0; x<n+1; x++){
+		for (int u=0; u<n; u++){
+			for (int v=0; v<n; v++){
+				shortestPaths[u][v][x] = INT_MAX;
+				prev[u][v][x] = -1;
+			}
+		}
+	}
+
+	//update all pairs of paths of length 0 with corresponding edge weights. 
+	//update all predecessors as src nodes.
+	std::map<int, EdgeInfo> edges;
+	bool ret = G.getAllEdges(edges); 
+
+	for(auto x:edges){
+		const int srcNodeIndex = x.first;
+		const EdgeInfo& destNodesInfo = x.second;
+		for (auto y:destNodesInfo){
+			const int destNodeIndex = y.first;
+			const int edgeWeight = y.second;
+
+			shortestPaths[srcNodeIndex][destNodeIndex][0] = edgeWeight;
+			prev[srcNodeIndex][destNodeIndex][0] = srcNodeIndex-1;
+
+		}
+	}
+	
+	//update shortestPaths by memoizing the shortestpath with different number of intermediate nodes.
+	for (int x=1; x<n+1; x++){
+		for (int u=0; u<n; u++){
+			for (int v=0; v<n; v++){
+				long long  shortestPathInvolvingX = shortestPaths[u][x][x-1] + shortestPaths[x][v][x-1]; 
+				if (shortestPathInvolvingX < shortestPaths[u][v][x-1]){
+					shortestPaths[u][v][x] = shortestPathInvolvingX;
+					prev[u][v][x] = prev[x][v][x-1];
+				}else{
+					shortestPaths[u][v][x] = shortestPaths[u][v][x-1];
+					prev[u][v][x] = prev[u][v][x-1];
+				}
+			}
+		}
+	}
+	for (auto x: edges){
+		const int srcNodeIndex = x.first;
+		const EdgeInfo& destNodeInfo = x.second;
+		cout << "Shortest Paths from node " << srcNodeIndex << endl;
+
+		for(auto y:destNodeInfo){
+			const int destNodeIndex = y.first;
+			const int edgeWeight = y.second;
+
+			cout << "to node " << destNodeIndex << " : " << shortestPaths[srcNodeIndex][destNodeIndex][nodes.size()-1] << endl;
+
+		}
+	}
+}
 
 template void findSingleSourceShortestPath<int>(Graph<int>&, const int);
 template void dijkstras<int>(Graph<int>&, const int);
 template void bellmanFord<int>(Graph<int>&, const int);
-
+template void floydWarshall<int>(Graph<int>&);
